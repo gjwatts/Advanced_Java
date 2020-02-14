@@ -9,7 +9,7 @@ import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 public class FileLinesCounter {
-    private Path dir = Paths.get("src", "main", "java", "concurrency");
+    private Path dir = Paths.get("C:", "Users", "GregoryWatts", "Downloads", "Advanced_Java-master", "src", "main", "java", "concurrency");
 
     public long computeTotalNumberOfLines() {
         long total = 0;
@@ -34,7 +34,7 @@ public class FileLinesCounter {
     }
 
     private List<Callable<Long>> getFileLineCounters() throws IOException {
-        return Files.list(dir)
+        return Files.walk(dir)
                 .filter(Files::isRegularFile)
                 .map(this::callablePrintingCounter)
                 .collect(Collectors.toList());

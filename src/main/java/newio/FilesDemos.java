@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 public class FilesDemos {
     public static void main(String[] args) throws IOException {
         // Create a directory
+//        System.out.println(Paths.get("data").toAbsolutePath());
         Files.createDirectory(Paths.get("data"));
 
         // Create a directory with intermediate directories
@@ -26,7 +27,8 @@ public class FilesDemos {
         deleted = Files.deleteIfExists(Paths.get("sub1"));
 
         // Access a file, read it into a collection, and print
-        Path sourceDir = Paths.get("src", "main", "java", "newio");
+        System.out.println(Paths.get("Downloads", "Advanced_Java-master", "src", "main", "java", "newio").toAbsolutePath());
+        Path sourceDir = Paths.get("Downloads", "Advanced_Java-master", "src", "main", "java", "newio");
         Path dataFile = sourceDir.resolve("data.txt");
         System.out.println(Files.lines(dataFile).collect(Collectors.toList()));
 
@@ -42,7 +44,7 @@ public class FilesDemos {
         Files.deleteIfExists(other);
 
         // Visit all the files in the source folder
-        Path javaDir = Paths.get("src", "main", "java");
+        Path javaDir = Paths.get("Downloads", "Advanced_Java-master", "src", "main", "java");
         try (Stream<Path> entries = Files.walk(javaDir)) {
             entries.forEach(System.out::println);
         }

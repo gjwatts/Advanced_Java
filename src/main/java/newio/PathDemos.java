@@ -7,10 +7,10 @@ import java.nio.file.Paths;
 public class PathDemos {
     public static void main(String[] args) {
         // Using Paths.get(...) to create a Path
-        Path dictionary = Paths.get("/", "usr", "share", "dict", "web2");
+        Path dictionary = Paths.get("C:", "Users", "GregoryWatts", "Downloads", "Advanced_Java-master", "src", "main", "java", "newio");
         System.out.println(dictionary);
 
-        Path home = Paths.get("/Users/kousen");
+        Path home = Paths.get("/Users/GregoryWatts");
         System.out.println(home);
 
         // Using resolve to find nested paths
@@ -28,7 +28,7 @@ public class PathDemos {
         System.out.println("As a URI: " + project.toUri());
 
         // Normalize a path
-        Path p = Paths.get("/Users/kousen/Documents/./IntelliJ/..").normalize();
+        Path p = Paths.get("/Users/GregoryWatts/Documents/./Admin/..").normalize();
         System.out.println("Normalized: " + p);
 
         System.out.println("parent: " + project.toAbsolutePath().getParent());
