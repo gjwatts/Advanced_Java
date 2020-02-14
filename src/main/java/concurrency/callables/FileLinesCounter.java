@@ -9,7 +9,7 @@ import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 public class FileLinesCounter {
-    private Path dir = Paths.get("C:", "Users", "GregoryWatts", "Downloads", "Advanced_Java-master", "src", "main", "java", "concurrency");
+    private Path dir = Paths.get("C:", "Users", "GregoryWatts", "git", "Advanced_Java", "src", "main", "java", "concurrency", "callables");
 
     public long computeTotalNumberOfLines() {
         long total = 0;
@@ -65,7 +65,6 @@ public class FileLinesCounter {
 
     public static void main(String[] args) {
         FileLinesCounter demo = new FileLinesCounter();
-        System.out.printf("Total number of lines: %d%n",
-                demo.computeTotalNumberOfLines());
+        System.out.printf("Total number of lines: %d%n", demo.computeTotalNumberOfLines());
     }
 }

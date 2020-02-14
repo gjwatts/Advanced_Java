@@ -27,8 +27,8 @@ public class FilesDemos {
         deleted = Files.deleteIfExists(Paths.get("sub1"));
 
         // Access a file, read it into a collection, and print
-        System.out.println(Paths.get("Downloads", "Advanced_Java-master", "src", "main", "java", "newio").toAbsolutePath());
-        Path sourceDir = Paths.get("Downloads", "Advanced_Java-master", "src", "main", "java", "newio");
+        System.out.println(Paths.get("C:", "Users", "GregoryWatts", "git", "Advanced_Java", "src", "main", "java", "newio").toAbsolutePath());
+        Path sourceDir = Paths.get("C:", "Users", "GregoryWatts", "git", "Advanced_Java", "src", "main", "java", "newio");
         Path dataFile = sourceDir.resolve("data.txt");
         System.out.println(Files.lines(dataFile).collect(Collectors.toList()));
 
@@ -44,7 +44,7 @@ public class FilesDemos {
         Files.deleteIfExists(other);
 
         // Visit all the files in the source folder
-        Path javaDir = Paths.get("Downloads", "Advanced_Java-master", "src", "main", "java");
+        Path javaDir = Paths.get("C:", "Users", "GregoryWatts", "git", "Advanced_Java", "src", "main", "java", "newio");
         try (Stream<Path> entries = Files.walk(javaDir)) {
             entries.forEach(System.out::println);
         }

@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 public class PathDemos {
     public static void main(String[] args) {
         // Using Paths.get(...) to create a Path
-        Path dictionary = Paths.get("C:", "Users", "GregoryWatts", "Downloads", "Advanced_Java-master", "src", "main", "java", "newio");
+        Path dictionary = Paths.get("C:", "Users", "GregoryWatts", "git", "Advanced_Java", "src", "main", "java", "newio");
         System.out.println(dictionary);
 
         Path home = Paths.get("/Users/GregoryWatts");
@@ -23,9 +23,9 @@ public class PathDemos {
 
         // Project directory
         Path project = Paths.get(".");
-        System.out.println(project);
+        System.out.println(project.normalize());
         System.out.println(project.toAbsolutePath());
-        System.out.println("As a URI: " + project.toUri());
+        System.out.println("As a URI: " + project.normalize().toUri());
 
         // Normalize a path
         Path p = Paths.get("/Users/GregoryWatts/Documents/./Admin/..").normalize();
